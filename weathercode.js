@@ -35,7 +35,7 @@ function sanitizeCityInput(cityInput) {
     displayFiveDay(fiveDayURL);
   });
 }
-//displayFiveDay("http://api.openweathermap.org/data/2.5/forecast?q=tucson&appid=6f878781f6244ccdbc4b04689e3394dd")
+//displayFiveDay("http://api.openweathermap.org/data/2.5/forecast?q=tucson&appid=)
 function displayFiveDay(fiveDayURL) {
   console.log(fiveDayURL)
   $.ajax({
