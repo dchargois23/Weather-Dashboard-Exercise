@@ -44,7 +44,7 @@ function displayFiveDay(fiveDayURL) {
   }).then(function (fiveDayResponse) {
     console.log(fiveDayResponse);
     $("#fiveDay").empty();
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i <= 5; i++) {
       var divCard = $("<div>").attr("class", "col bgcolor rounded fivedaydiv");
       var cardDate = fiveDayResponse.list[i * 8].dt_txt
       cardPTagDate = $("<h4>").attr("class", "text-center").text(moment(cardDate).format('MMMM Do YYYY'));
@@ -103,7 +103,7 @@ function renderCityInfo() {
   $("#city-list").empty();
   for (var i = 0; i < inputCitiesArray.length; i++) {
     var aside = $("<aside>");
-    aside.addClass("text-dark bg-white border border-secondary rounded-sm city");
+    aside.addClass("bg-primary text-white border border-secondary rounded-sm city");
     aside.attr("data-name", inputCitiesArray[i]);
     aside.text(inputCitiesArray[i]);
     $("#city-list").append(aside);
