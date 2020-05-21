@@ -38,6 +38,7 @@ function sanitizeCityInput(cityInput) {
 //displayFiveDay("http://api.openweathermap.org/data/2.5/forecast?q=tucson&appid=)
 function displayFiveDay(fiveDayURL) {
   console.log(fiveDayURL)
+  //call fiveday 
   $.ajax({
     url: fiveDayURL,
     method: "GET",
