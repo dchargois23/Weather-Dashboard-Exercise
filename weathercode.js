@@ -65,6 +65,88 @@ function displayFiveDay(fiveDayURL) {
     };
   });
 }
+
+var cityName = ["Atlanta", "New York", "New Orleans", "San Francisco", "Houston", "Los Angeles", "Lafayette"];
+
+$("#atlanta").on("click", function (event) {
+  //prevents the page from refreshikng when a button is clicked 
+  event.preventDefault();
+  // This line of code will grab the input from the textbox and sanitize it
+  //var qLink = $("quickCity").val().trim();
+
+  for (var i = 0; i < cityName.length; i++) {
+    console.log(cityName);
+  }
+
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=Atlanta&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+
+});
+
+$("#newYork").on("click", function (event) {
+  //prevents the page from refreshikng when a button is clicked 
+  event.preventDefault();
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=New York&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+});
+
+$("#newOrleans").on("click", function (event) {
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=New Orleans&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+  //prevents the page from refreshikng when a button is clicked 
+
+});
+
+
+$("#sanFransisco").on("click", function (event) {
+  //prevents the page from refreshikng when a button is clicked 
+  event.preventDefault();
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=San Francisco&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+});
+
+
+
+$("#houston").on("click", function (event) {
+  //prevents the page from refreshikng when a button is clicked 
+  event.preventDefault();
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=Houston&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+});
+
+
+$("#losAngeles").on("click", function (event) {
+  //prevents the page from refreshikng when a button is clicked 
+  event.preventDefault();
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=Los Angeles&appid=7b43fb5e99e40b89c401895ab07f6ef0";
+  console.log(fiveDayURL);
+  displayFiveDay(fiveDayURL);
+
+  //This takes the input from the form and addes it to an array that will be displayed
+  ("#fiveDay").append(divCard)
+});
+
+
 function displayUVInfo(uvURL) {
   $.ajax({
     url: uvURL,
@@ -103,11 +185,6 @@ function displayUVInfo(uvURL) {
 function renderCityInfo() {
   $("#city-list").empty();
   for (var i = 0; i < inputCitiesArray.length; i++) {
-    var aside = $("<aside>");
-    aside.addClass("bg-primary text-white border border-secondary rounded-sm city");
-    aside.attr("data-name", inputCitiesArray[i]);
-    aside.text(inputCitiesArray[i]);
-    $("#city-list").append(aside);
   }
   $(".city").click(function () {
     //alert($(this).attr("data-name"));
